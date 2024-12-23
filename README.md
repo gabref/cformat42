@@ -1,7 +1,6 @@
 # CFormat42.nvim
 
 CFormat42.nvim is a lightweight Neovim plugin that formats C, C++, and header files using the `c_formatter_42` Python tool. It simplifies code formatting following 42 School Norm by providing seamless integration with Neovim.
-https://github.com/dawnbeen/c_formatter_42
 
 ## Features
 
