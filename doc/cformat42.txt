@@ -39,7 +39,7 @@ To install CFormat42.nvim, use your favorite plugin manager.
 Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
 
 > ```lua
-> use "yourname/cformat42.nvim"
+> use "gabref/cformat42.nvim"
 > ```
 
 After installation, the plugin automatically sets up default configurations.
