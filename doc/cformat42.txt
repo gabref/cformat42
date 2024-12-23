@@ -1,0 +1,103 @@
+==============================================================================
+CFormat42.nvim                          *CFormat42.nvim* *cformat42*
+==============================================================================
+
+Author: gabref <gabudevgen@gmail.com>
+Version: 1.0.0
+Description: A Neovim plugin to format C, C++, and header files using
+`c_formatter_42`.
+
+==============================================================================
+CONTENTS                                        *cformat42-contents*
+==============================================================================
+
+1. Introduction                  |cformat42-intro|
+2. Installation                  |cformat42-install|
+3. Commands                      |cformat42-commands|
+4. Keybindings                   |cformat42-keybindings|
+5. Configuration                 |cformat42-config|
+6. FAQs                          |cformat42-faq|
+
+==============================================================================
+1. Introduction                                    *cformat42-intro*
+==============================================================================
+
+CFormat42.nvim is a lightweight Neovim plugin designed to simplify formatting
+C, C++, and header files using the `c_formatter_42` Python tool.
+
+Features:
+- Automatically installs `c_formatter_42` if not available.
+- Supports customization of file types and formatter binary.
+- Simple command-based usage.
+
+==============================================================================
+2. Installation                                    *cformat42-install*
+==============================================================================
+
+To install CFormat42.nvim, use your favorite plugin manager.
+
+Using [packer.nvim](https://github.com/wbthomason/packer.nvim):
+
+> ```lua
+> use "yourname/cformat42.nvim"
+> ```
+
+After installation, the plugin automatically sets up default configurations.
+
+==============================================================================
+3. Commands                                        *cformat42-commands*
+==============================================================================
+
+:CFormat42                                         *:CFormat42*
+  Formats the current buffer using the configured formatter (`c_formatter_42`
+  by default).
+
+==============================================================================
+4. Keybindings                                     *cformat42-keybindings*
+==============================================================================
+
+You can add custom keybindings to quickly trigger formatting. For example:
+
+```lua
+vim.api.nvim_set_keymap("n", "<leader>4", ":CFormat42<CR>", { noremap = true, silent = true })
+```
+
+This binds `<leader>4` to the `:CFormat42` command.
+
+==============================================================================
+5. Configuration                                   *cformat42-config*
+==============================================================================
+
+CFormat42.nvim allows customization via the `setup()` function. Here’s an
+example configuration:
+
+> ```lua
+> require("cformat42").setup({
+>     formatter = "c_formatter_42",  -- Binary for the formatter
+>     filetypes = { c = true, h = true, cpp = true, hpp = true },
+> })
+> ```
+
+### Default Configuration
+
+- `formatter`: (string) Path or name of the formatter binary. Default:
+  `"c_formatter_42"`.
+- `filetypes`: (table) Supported file types. Default:
+  `{ c = true, h = true, cpp = true, hpp = true }`.
+
+==============================================================================
+6. FAQs                                             *cformat42-faq*
+==============================================================================
+
+Q: What happens if `c_formatter_42` is not installed?
+A: The plugin will automatically install it using `pip3 install c-formatter-42`.
+
+Q: Can I use a custom formatter?
+A: Yes! Update the `formatter` option in the `setup()` function to your
+   preferred binary or script.
+
+Q: How do I add support for more file types?
+A: Extend the `filetypes` table in the `setup()` configuration.
+
+==============================================================================
+End of CFormat42.nvim documentation.
